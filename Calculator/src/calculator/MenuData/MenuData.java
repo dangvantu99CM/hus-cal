@@ -86,6 +86,13 @@ public class MenuData {
                         add(new MenuItem("AX3 + BX2 + CX + D = 0", null, "", actionMenu.click_ptb3, null));
                     }
                 }));
+//                add(new MenuItem("Hệ phương trình", null, "", null, new ArrayList<MenuItem>() {
+//                    {
+//                        add(new MenuItem("AX + B = 0", null, "", actionMenu.click_ptb1, null));
+//                        add(new MenuItem("AX2 + BX + C = 0", null, "", actionMenu.click_ptb2, null));
+//                        add(new MenuItem("AX3 + BX2 + CX + D = 0", null, "", actionMenu.click_ptb3, null));
+//                    }
+//                }));
                 add(new MenuItem("Ma trận", null, "", null, new ArrayList<MenuItem>() {
                     {
                         add(new MenuItem("[A]*[B]", null, "", null, new ArrayList<MenuItem>() {

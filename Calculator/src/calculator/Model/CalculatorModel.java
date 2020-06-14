@@ -18,7 +18,7 @@ public class CalculatorModel {
         return exception.isValidExpr(expr);
     }
 
-    public double valueExpr(String expr) {
+    public double valueExpr(String expr) throws ScriptException {
         return exception.eval(expr);
     }
 

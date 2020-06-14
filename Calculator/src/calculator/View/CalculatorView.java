@@ -52,9 +52,9 @@ public class CalculatorView extends JFrame {
     public boolean isClickedEnter = false;
     public boolean isClicked_GPT = false;
     public boolean isClicked_matrix = false;
-    
+
     private History history = new History();
-    
+
     private TimeSystem timeSystem = new TimeSystem();
 
     //public StringBuilder[][] B = null;
@@ -65,9 +65,10 @@ public class CalculatorView extends JFrame {
 
     public void initFrame() {
         this.setLayout(new BorderLayout());
-        this.setExtendedState(JFrame.MAXIMIZED_BOTH);
-        this.pack();
-        //this.setLocation(250, 50);
+//        this.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        this.setSize(800, 600);
+//        this.pack();
+        this.setLocation(250, 50);
         this.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
         this.setTitle("HUS CALCULATOR");
 
@@ -116,7 +117,7 @@ public class CalculatorView extends JFrame {
 
         actionMenu.click_enter = click_enter;
         actionMenu.click_solve = click_solve;
-        
+
         actionMenu.click_del_button = click_del_button;
 
         // matrix
@@ -131,7 +132,7 @@ public class CalculatorView extends JFrame {
         actionMenu.click_add_matrix_22 = click_add_matrix_22;
         actionMenu.click_add_matrix_33 = click_add_matrix_33;
         
-        
+        actionMenu.click_exp_button = click_exp_button;
 
         this.setJMenuBar(new HeaderComponent(menuData));
         this.add(scr, BorderLayout.CENTER);
@@ -353,8 +354,8 @@ public class CalculatorView extends JFrame {
             try {
                 result = calModel.evalJs(expression_By_User);
                 scr.taxtResult.setText(String.valueOf(result));
-                String time=  timeSystem.getTimeInSystem()+ " " + timeSystem.getDateInSystem();
-                history.stack.push(new History(scr.taxt.getText(), scr.taxtResult.getText(),time));
+                String time = timeSystem.getTimeInSystem() + " " + timeSystem.getDateInSystem();
+                history.stack.push(new History(scr.taxt.getText(), scr.taxtResult.getText(), time));
                 while (!calModel.listResultQueue.isEmpty()) {
                     calModel.listResultQueue.dequeue();
                 }
@@ -443,9 +444,9 @@ public class CalculatorView extends JFrame {
             }
         }
     };
-    
+
     ActionMenuItem click_1_x = new ActionMenuItem() {
-       
+
         @Override
         public void onClick(MenuItem menuItem) {
             if (isClicked_GPT || isClicked_matrix) {
@@ -500,13 +501,13 @@ public class CalculatorView extends JFrame {
             }
         }
     };
-    
+
     ActionMenuItem click_lich_su = new ActionMenuItem() {
 
         @Override
         public void onClick(MenuItem menuItem) {
             history.run();
-            
+
         }
     };
 
@@ -517,7 +518,7 @@ public class CalculatorView extends JFrame {
             if (isClicked_GPT || isClicked_matrix) {
                 set_he_so(menuItem.text + "(");
             } else {
-                expression_By_User += menuItem.text;
+                expression_By_User += menuItem.text + "(";
                 scr.taxt.setText(expression_By_User);
             }
         }
@@ -530,7 +531,7 @@ public class CalculatorView extends JFrame {
             if (isClicked_GPT || isClicked_matrix) {
                 set_he_so(menuItem.text + "(");
             } else {
-                expression_By_User += menuItem.text;
+                expression_By_User += menuItem.text + "(";
                 scr.taxt.setText(expression_By_User);
             }
         }
@@ -543,7 +544,7 @@ public class CalculatorView extends JFrame {
             if (isClicked_GPT || isClicked_matrix) {
                 set_he_so(menuItem.text + "(");
             } else {
-                expression_By_User += menuItem.text;
+                expression_By_User += menuItem.text + "(";
                 scr.taxt.setText(expression_By_User);
             }
         }
@@ -556,7 +557,20 @@ public class CalculatorView extends JFrame {
             if (isClicked_GPT || isClicked_matrix) {
                 set_he_so(menuItem.text + "(");
             } else {
-                expression_By_User += menuItem.text;
+                expression_By_User += menuItem.text + "(";
+                scr.taxt.setText(expression_By_User);
+            }
+        }
+    };
+    
+    ActionMenuItem click_exp_button = new ActionMenuItem() {
+
+        @Override
+        public void onClick(MenuItem menuItem) {
+            if (isClicked_GPT || isClicked_matrix) {
+                set_he_so("e^");
+            } else {
+                expression_By_User += "e^";
                 scr.taxt.setText(expression_By_User);
             }
         }
@@ -569,7 +583,7 @@ public class CalculatorView extends JFrame {
             if (isClicked_GPT || isClicked_matrix) {
                 set_he_so(menuItem.text + "(");
             } else {
-                expression_By_User += menuItem.text;
+                expression_By_User += menuItem.text + "(";
                 scr.taxt.setText(expression_By_User);
             }
         }
@@ -582,17 +596,17 @@ public class CalculatorView extends JFrame {
             if (isClicked_GPT || isClicked_matrix) {
                 set_he_so(menuItem.text + "(");
             } else {
-                expression_By_User += menuItem.text;
+                expression_By_User += menuItem.text + "(";
                 scr.taxt.setText(expression_By_User);
             }
         }
     };
-    
+
     ActionMenuItem click_del_button = new ActionMenuItem() {
 
         @Override
         public void onClick(MenuItem menuItem) {
-            System.out.println("ppppppppppp " );
+            System.out.println("ppppppppppp ");
 //            if (isClicked_GPT || isClicked_matrix) {
 //                set_he_so(menuItem.text + "(");
 //            } else {
@@ -669,6 +683,8 @@ public class CalculatorView extends JFrame {
             }
         }
     };
+    
+     
 
     public void printMatrix(StringBuilder[][] m) {
         for (int i = 0; i < m.length; i++) {
@@ -806,6 +822,7 @@ public class CalculatorView extends JFrame {
             setTextScreenMatrix(menuItem.text);
         }
     };
+    
 
     public void setTextScreenMatrix(String matrixSize) {
         resetScreen();
@@ -830,9 +847,9 @@ public class CalculatorView extends JFrame {
                 B[i][j] = new StringBuilder("");
             }
         }
-        if(isClickedMultyMatrix){
+        if (isClickedMultyMatrix) {
             scr.taxt.append("[A]*[B] \n");
-        }else{
+        } else {
             scr.taxt.append("[A]+[B] \n");
         }
         scr.taxt.append("-----------------------\n");
@@ -848,7 +865,15 @@ public class CalculatorView extends JFrame {
         for (int i = 0; i < arr_he_so.length; i++) {
             arr_he_so[i] = new StringBuilder("");
         }
-        scr.taxt.append("AX2 + BX + C = 0 \n");
+        if (degree == 2) {
+            scr.taxt.append("AX + B = 0 \n");
+        }
+        if (degree == 3) {
+            scr.taxt.append("AX2 + BX + C = 0 \n");
+        }
+        if (degree == 4) {
+            scr.taxt.append("AX3 + BX2 + CX + D = 0 \n");
+        }
         scr.taxt.append("-----------------------\n");
         scr.taxt.append("A = ");
     }
@@ -1467,7 +1492,7 @@ public class CalculatorView extends JFrame {
             }
             // 3------------------1
             if (countEnter > 2 && B.length == 3 && B[0].length == 1) {
-               
+
                 if (countEnter == 3) {
                     B[0][0].append(text);
                     scr.taxt.append(text);

@@ -33,6 +33,8 @@ public class RegexApp {
     public static final String regex_ln = "(ln\\([0-9|+|-|*|/|.|!|%]+\\))";
     // check log
     public static final String regex_log = "(log\\([0-9|+|-|*|/|.|!|%]+\\))";
+    // check log
+    public static final String regex_e_mu = "(e\\^[0-9|.|0-9|\\(|\\)|+|-|*|/|!|%]*)";
 
     //static final String sub_regex_sin = "([0-9|.|+|-|*|/|%|!|ln\\(.*\\)]+)";
     public static final String sub_regex_sin = "sin(.*)";
@@ -44,6 +46,7 @@ public class RegexApp {
    // static final String sub_regex_ln = "([0-9|.|+|-|*|/|%|!]+)";
     public static final String sub_regex_ln = "ln(.*)";
     public static final String sub_regex_sqrt = "sqrt(.*)";
+    public static final String sub_regex_e_mu = "e\\^([0-9|.|\\(|\\)|+|-|*|/|!|%]*)";
 
     public static final int _percent = 0;
     public static final int _factorial = 1;
@@ -53,6 +56,7 @@ public class RegexApp {
     public static final int _ln = 5;
     public static final int _sqrt = 6;
     public static final int _log = 7;
+     public static final int _e_mu = 8;
     
 
 }

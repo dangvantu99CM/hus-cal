@@ -82,7 +82,16 @@ public class Expression {
         }
     }
 
-    public double eval(String formula) {
+    public double eval(String formula) throws ScriptException {
+        double result = 0;
+        ScriptEngineManager mgr = new ScriptEngineManager();
+        ScriptEngine engine = mgr.getEngineByName("JavaScript");
+        result = Double.parseDouble(engine.eval(formula).toString());
+        System.out.println(engine.eval(formula));
+        return result;
+    }
+
+    public double eval1(String formula) {
         LinkedListStack<String> operatorStack = new LinkedListStack<>();
         LinkedListStack<String> rankStack = new LinkedListStack<>();
         String re = "\\(|\\)|\\d+\\.?\\d*|[+-/%^!*]";
@@ -176,6 +185,10 @@ public class Expression {
             Pattern pate_ngoac = Pattern.compile(RegexApp.regex_ngoac);
             Matcher mat_ngoac = pate_ngoac.matcher(expr);
 
+            //   convert e^x!
+            Pattern pate_e_mu = Pattern.compile(RegexApp.regex_e_mu);
+            Matcher mat_e_mu = pate_e_mu.matcher(expr);
+
             while (true) {
 
                 if (mat_sin.find()) {
@@ -213,21 +226,15 @@ public class Expression {
                     expr = convert(expr, RegexApp.regex_sqrt, RegexApp._sqrt, RegexApp.sub_regex_sqrt);
                 }
 
-                if (!mat_percent.find() && !mat_factorial.find() && !mat_sin.find() && !mat_cos.find() && !mat_tan.find() && !mat_ln.find() && !mat_log.find() && !mat_sqrt.find()) {
+                if (mat_e_mu.find()) {
+                    expr = convert(expr, RegexApp.regex_e_mu, RegexApp._e_mu, RegexApp.sub_regex_e_mu);
+                }
+
+                if (!mat_percent.find() && !mat_factorial.find() && !mat_sin.find() && !mat_cos.find() && !mat_tan.find() && !mat_ln.find() && !mat_log.find() && !mat_sqrt.find() && !mat_e_mu.find()) {
                     break;
                 }
             }
-//            System.out.println("eeeeeeeeeeeeeeeeee" + expr);
-            ScriptEngineManager mgr = new ScriptEngineManager();
-            ScriptEngine engine = mgr.getEngineByName("JavaScript");
-            result = Double.parseDouble(engine.eval(expr).toString());
-            System.out.println(engine.eval(expr));
-//            if(mat_ngoac.find()){
-////                System.out.println("aaaaaaaaaaaaaaaa");
-//                result = eval(expr);
-//            }else{
-//                result = compute(expr);
-//            }
+            result = eval(expr);
             System.out.println("result == " + result);
         } catch (Exception e) {
             System.out.println("Biểu thức không hợp lệ");
@@ -289,6 +296,10 @@ public class Expression {
                     case 7:
                         listdataReplace.add(String.valueOf(Math.log10(evalJs(matcher1.group(1)))));
                         break;
+                    case 8:
+                        System.out.println("aaaaaaaaaaaaaaaaa");
+                        listdataReplace.add(String.valueOf(Math.exp(evalJs(matcher1.group(1)))));
+                        break;
                     default:
                         System.out.println("Not math");
                 }
@@ -330,7 +341,7 @@ public class Expression {
 
     public static void main(String[] args) throws ScriptException {
         Expression expr = new Expression();
-        String f = "1+sin(0.5+2+ln(4.5)+3!+sqrt(5))";
+        String f = "e^(2+5!)";
         String f2 = "sin(0.5+2-1+3!)";
         //expr.convert(f2, RegexApp.regex_factorial, RegexApp._factorial, RegexApp.sub_regex_factorial);
         String t1 = "1+sin(0.5)+3!+cos(2)";
@@ -338,6 +349,8 @@ public class Expression {
         String t3 = "sqrt(4)";
 
         expr.evalJs(f);
+        
+        System.out.println("eeeeeeeeee " + Math.exp(122.0));
 
 //        System.out.println("ssssssssss =  " + expr.eval("(1-0.5+-2)"));
 //        String expression = "1+2*6-7/2";
