@@ -21,7 +21,7 @@ import javax.swing.table.TableCellRenderer;
 
 /**
  *
- * @author tudv
+ * @author anhpv
  */
 public class History {
 

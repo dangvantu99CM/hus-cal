@@ -17,7 +17,7 @@ import java.util.regex.Pattern;
 
 /**
  *
- * @author tudv
+ * @author anhpv
  */
 public class BuildTree<E> extends LinkedBinaryTree {
 

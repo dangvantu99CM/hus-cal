@@ -20,7 +20,7 @@ import javax.swing.border.LineBorder;
 
 /**
  *
- * @author tudv
+ * @author anhpv
  */
 public class Screen extends JPanel {
 

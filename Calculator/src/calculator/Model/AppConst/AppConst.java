@@ -7,7 +7,7 @@ package calculator.Model.AppConst;
 
 /**
  *
- * @author tudv
+ * @author anhpv
  */
 public class AppConst {
 

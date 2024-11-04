@@ -7,7 +7,7 @@ package calculator.Model.Interface;
 
 /**
  *
- * @author tudv
+ * @author anhpv
  */
 public interface QueueInterface<E> extends  Iterable<E>{
     public void enqueue(E element);

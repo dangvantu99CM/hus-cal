@@ -7,7 +7,7 @@ package calculator.MenuData;
 
 /**
  *
- * @author tudv
+ * @author anhpv
  */
 public interface ActionMenuItem {
     public void onClick(MenuItem menuItem);

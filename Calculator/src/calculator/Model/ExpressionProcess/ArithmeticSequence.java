@@ -7,7 +7,7 @@ package calculator.Model.ExpressionProcess;
 
 /**
  *
- * @author tudv
+ * @author anhpv
  */
 import java.util.Stack;
 

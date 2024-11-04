@@ -10,12 +10,15 @@ import javax.swing.ImageIcon;
 
 /**
  *
- * @author tudv
+ * @author anhpv
  */
+
+// Chua du lieu lien quan HeaderComponent, va button
+// Cau truc du liue => Tree (cay vo cap)
 public class MenuData {
 
-    private ArrayList<MenuItem> dicButtons = new ArrayList<>();
-    private ActionMenu actionMenu = null;
+    private ArrayList<MenuItem> dicButtons = new ArrayList<>(); // dictinary
+    private ActionMenu actionMenu = null; // la noi tap trung cac event define truu tuong.
     private ArrayList<MenuItem> dicDataMenuBar = new ArrayList<>();
 
     private static final String CONST_URL_IMAGE = ".././Resource/Image/";
@@ -25,11 +28,12 @@ public class MenuData {
         initMenuItem();
     }
 
+    // la du lieu khoi tao cho MainMenuComponent
     public ArrayList<MenuItem> initMenuItem() {
         if (dicButtons.size() > 0) {
             return dicButtons;
         }
-
+        
         dicButtons.add(new MenuItem("Enter", null, "230,230,230", actionMenu.click_enter, null));
         dicButtons.add(new MenuItem("Sovel", setImgIcon(CONST_URL_IMAGE + "x^2.png"), "230,230,230", actionMenu.click_solve, null));
         dicButtons.add(new MenuItem("x!", null, "230,230,230", actionMenu.click_factory_button, null));
@@ -70,9 +74,18 @@ public class MenuData {
         dicButtons.add(new MenuItem("=", null, "255,255,255", actionMenu.click_equal_button, null));
         dicButtons.add(new MenuItem("+", null, "255,255,255", actionMenu.click_add_button, null));
 
+//        dicButtons.add(new MenuItem("?", null, "255,255,255", actionMenu.click_any_button, null));
+//        dicButtons.add(new MenuItem("EXP", null, "230,230,230", actionMenu.click_exp_button, null));
+//        dicButtons.add(new MenuItem("%", null, "230,230,230", actionMenu.click_percent_button, null));
+//        dicButtons.add(new MenuItem("0", null, "240,245,245", actionMenu.click_number_0, null));
+//        dicButtons.add(new MenuItem(".", null, "240,245,245", actionMenu.click_point_button, null));
+//        dicButtons.add(new MenuItem("=", null, "255,255,255", actionMenu.click_equal_button, null));
+//        dicButtons.add(new MenuItem("+", null, "255,255,255", actionMenu.click_add_button, null));
+
         return dicButtons;
     }
 
+    // Tra ve data cho HeaderComponent
     public ArrayList<MenuItem> setListDataMenuBar() {
         if (dicDataMenuBar.size() > 0) {
             return dicDataMenuBar;
@@ -84,6 +97,7 @@ public class MenuData {
                         add(new MenuItem("AX + B = 0", null, "", actionMenu.click_ptb1, null));
                         add(new MenuItem("AX2 + BX + C = 0", null, "", actionMenu.click_ptb2, null));
                         add(new MenuItem("AX3 + BX2 + CX + D = 0", null, "", actionMenu.click_ptb3, null));
+                        add(new MenuItem("AX4 + BX3 + CX2 + DX + E = 0", null, "", actionMenu.click_ptb3, null));
                     }
                 }));
 //                add(new MenuItem("Hệ phương trình", null, "", null, new ArrayList<MenuItem>() {
@@ -119,6 +133,54 @@ public class MenuData {
         }));
         dicDataMenuBar.add(new MenuItem("Trợ giúp", null, "", actionMenu.click_tro_giup, null));
         dicDataMenuBar.add(new MenuItem("Lịch sử", null, "", actionMenu.click_lich_su, null));
+        dicDataMenuBar.add(new MenuItem("HIHI", null, "", actionMenu.click_lich_su, new ArrayList<MenuItem>() {
+            {
+                add(new MenuItem("HAHA", null, "", null, new ArrayList<MenuItem>() {
+                    {
+                        add(new MenuItem("[A]*[B]", null, "", null, new ArrayList<MenuItem>() {
+                            {
+                                add(new MenuItem("(2,2)*(2,2)", null, "", actionMenu.click_multy_matrix_22, null));
+                                add(new MenuItem("(3,3)*(3,3)", null, "", actionMenu.click_multy_matrix_33, null));
+                                add(new MenuItem("(1,2)*(2,1)", null, "", actionMenu.click_multy_matrix_1221, null));
+                                add(new MenuItem("(2,1)*(1,2)", null, "", actionMenu.click_multy_matrix_2112, null));
+                                add(new MenuItem("(2,3)*(3,2)", null, "", actionMenu.click_multy_matrix_2332, null));
+                                add(new MenuItem("(3,2)*(2,3)", null, "", actionMenu.click_multy_matrix_3223, null));
+                                add(new MenuItem("(1,3)*(3,1)", null, "", actionMenu.click_multy_matrix_1331, null));
+                                add(new MenuItem("(3,1)*(1,3)", null, "", actionMenu.click_multy_matrix_3113, null));
+                            }
+                        }));
+                        add(new MenuItem("[A]+[B]", null, "", null, new ArrayList<MenuItem>() {
+                            {
+                                add(new MenuItem("(2,2)", null, "", actionMenu.click_add_matrix_22, null));
+                                add(new MenuItem("(3,3)", null, "", actionMenu.click_add_matrix_33, null));
+                            }
+                        }));
+                    }
+                }));
+                add(new MenuItem("HOHO", null, "", null, new ArrayList<MenuItem>() {
+                    {
+                        add(new MenuItem("[A]*[B]", null, "", null, new ArrayList<MenuItem>() {
+                            {
+                                add(new MenuItem("(2,2)*(2,2)", null, "", actionMenu.click_multy_matrix_22, null));
+                                add(new MenuItem("(3,3)*(3,3)", null, "", actionMenu.click_multy_matrix_33, null));
+                                add(new MenuItem("(1,2)*(2,1)", null, "", actionMenu.click_multy_matrix_1221, null));
+                                add(new MenuItem("(2,1)*(1,2)", null, "", actionMenu.click_multy_matrix_2112, null));
+                                add(new MenuItem("(2,3)*(3,2)", null, "", actionMenu.click_multy_matrix_2332, null));
+                                add(new MenuItem("(3,2)*(2,3)", null, "", actionMenu.click_multy_matrix_3223, null));
+                                add(new MenuItem("(1,3)*(3,1)", null, "", actionMenu.click_multy_matrix_1331, null));
+                                add(new MenuItem("(3,1)*(1,3)", null, "", actionMenu.click_multy_matrix_3113, null));
+                            }
+                        }));
+                        add(new MenuItem("[A]+[B]", null, "", null, new ArrayList<MenuItem>() {
+                            {
+                                add(new MenuItem("(2,2)", null, "", actionMenu.click_add_matrix_22, null));
+                                add(new MenuItem("(3,3)", null, "", actionMenu.click_add_matrix_33, null));
+                            }
+                        }));
+                    }
+                }));
+            }
+        }));
         return dicDataMenuBar;
     }
 

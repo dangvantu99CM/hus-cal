@@ -7,7 +7,7 @@ package calculator.Model.Interface;
 
 /**
  *
- * @author tudv
+ * @author anhpv
  */
 public interface BinaryTreeInterface<E> {
     E root();

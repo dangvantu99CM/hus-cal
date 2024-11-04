@@ -11,7 +11,7 @@ import java.util.Stack;
 
 /**
  *
- * @author tudv
+ * @author anhpv
  */
 public class LinkedListStack<E> implements StackInterface<E> {
 

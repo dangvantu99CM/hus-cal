@@ -21,6 +21,11 @@ public class CalculatorController {
         this.theModel = theModel;
         this.theView = theView;
 
+    };
+    
+    // function
+    public void handleClickEqualButon() {
+        // anything
+        //theModel.solve();
     }
-
 }

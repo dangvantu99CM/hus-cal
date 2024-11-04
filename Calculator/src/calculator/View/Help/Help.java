@@ -7,7 +7,7 @@ package calculator.View.Help;
 
 /**
  *
- * @author tudv
+ * @author anhpv
  */
 import java.awt.Color;
 import java.awt.Container;

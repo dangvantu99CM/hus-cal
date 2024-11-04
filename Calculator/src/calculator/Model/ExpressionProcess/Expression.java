@@ -82,6 +82,7 @@ public class Expression {
         }
     }
 
+    // Dung tinh duoc ca sin/cos/tan/cot + bieu thuc so hoc
     public double eval(String formula) throws ScriptException {
         double result = 0;
         ScriptEngineManager mgr = new ScriptEngineManager();
@@ -91,6 +92,7 @@ public class Expression {
         return result;
     }
 
+    // Function nay chi dung cho nhung bieu thuc toan hoc thong thuong vd: exp = (1+3)*5
     public double eval1(String formula) {
         LinkedListStack<String> operatorStack = new LinkedListStack<>();
         LinkedListStack<String> rankStack = new LinkedListStack<>();

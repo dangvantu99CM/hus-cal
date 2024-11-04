@@ -29,12 +29,12 @@ import javax.swing.border.EmptyBorder;
 
 /**
  *
- * @author tudv
+ * @author anhpv
  */
 public class CalculatorView extends JFrame {
 
-    public ActionMenu actionMenu = new ActionMenu();
-    private MenuData menuData = new MenuData(actionMenu);
+    public ActionMenu actionMenu = null;
+    private MenuData menuData = null;
 
     public String expression_By_User = "";
     public Screen scr = new Screen();
@@ -59,8 +59,86 @@ public class CalculatorView extends JFrame {
 
     //public StringBuilder[][] B = null;
     public CalculatorView() {
+        actionMenu = new ActionMenu();
+        setActionMenus();
+        menuData = new MenuData(actionMenu);
         initFrame();
         this.setVisible(true);
+    }
+    
+    // wrapper function
+    public void runApp(boolean isRun) {
+        // if
+        // else
+        this.setVisible(isRun);
+    }
+    
+    public void setActionMenus() {
+        if(actionMenu != null) {
+          actionMenu.click_number_0 = click_number_0;
+          actionMenu.click_number_1 = click_number_1;
+          actionMenu.click_number_2 = click_number_2;
+          actionMenu.click_number_3 = click_number_3;
+          actionMenu.click_number_4 = click_number_4;
+          actionMenu.click_number_5 = click_number_5;
+          actionMenu.click_number_6 = click_number_6;
+          actionMenu.click_number_7 = click_number_7;
+          actionMenu.click_number_8 = click_number_8;
+          actionMenu.click_number_9 = click_number_9;
+
+          actionMenu.click_add_button = click_add_button;
+          actionMenu.click_divide_button = click_divide_button;
+          actionMenu.click_open_parent_button = click_open_parent_button;
+          actionMenu.click_close_parent_button = click_close_parent_button;
+          actionMenu.click_point_button = click_point_button;
+          actionMenu.click_percent_button = click_percent_button;
+          actionMenu.click_subtract_button = click_subtract_button;
+          actionMenu.click_ac_button = click_ac_button;
+          actionMenu.click_equal_button = click_equal_button;
+          actionMenu.click_multyply_button = click_multyply_button;
+
+          actionMenu.click_PI_button = click_PI_button;
+          actionMenu.click_number_e_button = click_number_e_button;
+          actionMenu.click_percent_button = click_percent_button;
+          actionMenu.click_ans_button = click_ans_button;
+          actionMenu.click_factory_button = click_factory_button;
+          actionMenu.click_sin_button = click_sin_button;
+          actionMenu.click_sin_button = click_sin_button;
+          actionMenu.click_cos_button = click_cos_button;
+          actionMenu.click_tan_button = click_tan_button;
+          actionMenu.click_ln_button = click_ln_button;
+          actionMenu.click_log_button = click_log_button;
+          actionMenu.click_sqrt_button = click_sqrt_button;
+          actionMenu.click_1_x = click_1_x;
+
+          actionMenu.click_ptb1 = click_ptb1;
+          actionMenu.click_ptb2 = click_ptb2;
+          actionMenu.click_ptb3 = click_ptb3;
+
+          actionMenu.click_tro_giup = click_tro_giup;
+          actionMenu.click_lich_su = click_lich_su;
+
+          actionMenu.click_enter = click_enter;
+          actionMenu.click_solve = click_solve;
+
+          actionMenu.click_del_button = click_del_button;
+
+          // matrix
+          actionMenu.click_multy_matrix_22 = click_multy_matrix_22;
+          actionMenu.click_multy_matrix_33 = click_multy_matrix_33;
+          actionMenu.click_multy_matrix_1221 = click_multy_matrix_1221;
+          actionMenu.click_multy_matrix_2112 = click_multy_matrix_2112;
+          actionMenu.click_multy_matrix_2332 = click_multy_matrix_2332;
+          actionMenu.click_multy_matrix_3223 = click_multy_matrix_3223;
+          actionMenu.click_multy_matrix_1331 = click_multy_matrix_1331;
+          actionMenu.click_multy_matrix_3113 = click_multy_matrix_3113;
+          actionMenu.click_add_matrix_22 = click_add_matrix_22;
+          actionMenu.click_add_matrix_33 = click_add_matrix_33;
+
+          actionMenu.click_exp_button = click_exp_button;
+
+          actionMenu.click_any_button = click_any_button;
+        }
     }
 
     public void initFrame() {
@@ -72,71 +150,10 @@ public class CalculatorView extends JFrame {
         this.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
         this.setTitle("HUS CALCULATOR");
 
-        actionMenu.click_number_0 = click_number_0;
-        actionMenu.click_number_1 = click_number_1;
-        actionMenu.click_number_2 = click_number_2;
-        actionMenu.click_number_3 = click_number_3;
-        actionMenu.click_number_4 = click_number_4;
-        actionMenu.click_number_5 = click_number_5;
-        actionMenu.click_number_6 = click_number_6;
-        actionMenu.click_number_7 = click_number_7;
-        actionMenu.click_number_8 = click_number_8;
-        actionMenu.click_number_9 = click_number_9;
-
-        actionMenu.click_add_button = click_add_button;
-        actionMenu.click_divide_button = click_divide_button;
-        actionMenu.click_open_parent_button = click_open_parent_button;
-        actionMenu.click_close_parent_button = click_close_parent_button;
-        actionMenu.click_point_button = click_point_button;
-        actionMenu.click_percent_button = click_percent_button;
-        actionMenu.click_subtract_button = click_subtract_button;
-        actionMenu.click_ac_button = click_ac_button;
-        actionMenu.click_equal_button = click_equal_button;
-        actionMenu.click_multyply_button = click_multyply_button;
-
-        actionMenu.click_PI_button = click_PI_button;
-        actionMenu.click_number_e_button = click_number_e_button;
-        actionMenu.click_percent_button = click_percent_button;
-        actionMenu.click_ans_button = click_ans_button;
-        actionMenu.click_factory_button = click_factory_button;
-        actionMenu.click_sin_button = click_sin_button;
-        actionMenu.click_sin_button = click_sin_button;
-        actionMenu.click_cos_button = click_cos_button;
-        actionMenu.click_tan_button = click_tan_button;
-        actionMenu.click_ln_button = click_ln_button;
-        actionMenu.click_log_button = click_log_button;
-        actionMenu.click_sqrt_button = click_sqrt_button;
-        actionMenu.click_1_x = click_1_x;
-
-        actionMenu.click_ptb1 = click_ptb1;
-        actionMenu.click_ptb2 = click_ptb2;
-        actionMenu.click_ptb3 = click_ptb3;
-
-        actionMenu.click_tro_giup = click_tro_giup;
-        actionMenu.click_lich_su = click_lich_su;
-
-        actionMenu.click_enter = click_enter;
-        actionMenu.click_solve = click_solve;
-
-        actionMenu.click_del_button = click_del_button;
-
-        // matrix
-        actionMenu.click_multy_matrix_22 = click_multy_matrix_22;
-        actionMenu.click_multy_matrix_33 = click_multy_matrix_33;
-        actionMenu.click_multy_matrix_1221 = click_multy_matrix_1221;
-        actionMenu.click_multy_matrix_2112 = click_multy_matrix_2112;
-        actionMenu.click_multy_matrix_2332 = click_multy_matrix_2332;
-        actionMenu.click_multy_matrix_3223 = click_multy_matrix_3223;
-        actionMenu.click_multy_matrix_1331 = click_multy_matrix_1331;
-        actionMenu.click_multy_matrix_3113 = click_multy_matrix_3113;
-        actionMenu.click_add_matrix_22 = click_add_matrix_22;
-        actionMenu.click_add_matrix_33 = click_add_matrix_33;
-        
-        actionMenu.click_exp_button = click_exp_button;
-
         this.setJMenuBar(new HeaderComponent(menuData));
         this.add(scr, BorderLayout.CENTER);
-        this.add(new MainComponent(actionMenu), BorderLayout.PAGE_END);
+//        this.add(new MainComponent(actionMenu), BorderLayout.PAGE_END);
+        this.add(new MainComponent(menuData), BorderLayout.PAGE_END);
     }
 
     public void _resetStatusButton() {
@@ -154,7 +171,7 @@ public class CalculatorView extends JFrame {
         scr.taxt.setText(expression_By_User);
         scr.taxtResult.setText("");
     }
-
+    
     ActionMenuItem click_number_0 = new ActionMenuItem() {
         @Override
         public void onClick(MenuItem menuItem) {
@@ -164,6 +181,13 @@ public class CalculatorView extends JFrame {
                 expression_By_User += menuItem.text;
                 scr.taxt.setText(expression_By_User);
             }
+        }
+    };
+
+    ActionMenuItem click_any_button = new ActionMenuItem() {
+        @Override
+        public void onClick(MenuItem menuItem) {
+            System.out.println("Click click_any_button ????? ");
         }
     };
 
@@ -1520,6 +1544,7 @@ public class CalculatorView extends JFrame {
             }
         }
     }
+ 
 
     public ArrayList<String> cutToken(String expr) {
         ArrayList<String> components = new ArrayList<String>();

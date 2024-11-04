@@ -13,7 +13,7 @@ import javax.swing.JMenuBar;
 
 /**
  *
- * @author tudv
+ * @author anhpv
  */
 public class HeaderComponent extends JMenuBar{
 
@@ -30,6 +30,7 @@ public class HeaderComponent extends JMenuBar{
     private JMenu createHeader(MenuItem data) {
         JMenu menuBar = new JMenu();
         menuBar.setText(data.text);
+        // lang nghe su kien clik tren java.swing
         menuBar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 if (data.action != null) {

@@ -10,7 +10,7 @@ import java.util.Iterator;
 
 /**
  *
- * @author tudv
+ * @author anhpv
  */
 public class LinkedListQueue<E> implements QueueInterface<E>{
     class Node {
@@ -74,7 +74,7 @@ public class LinkedListQueue<E> implements QueueInterface<E>{
             t = t.next;
             return data;
         }
-        
+         
     }
     
     public void _iterator(){

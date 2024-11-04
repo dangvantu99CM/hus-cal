@@ -12,7 +12,7 @@ import java.util.regex.Pattern;
 
 /**
  *
- * @author tudv
+ * @author anhpv
  */
 public class ConvertInfixToPosfix {
 

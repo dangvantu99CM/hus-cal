@@ -10,7 +10,7 @@ import javax.swing.ImageIcon;
 
 /**
  *
- * @author tudv
+ * @author anhpv
  */
 public class MenuItem {
     public String text="";

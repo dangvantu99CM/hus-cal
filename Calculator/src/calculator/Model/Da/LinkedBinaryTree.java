@@ -3,6 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+// Data Access
 package calculator.Model.Da;
 
 import calculator.Model.Interface.BinaryTreeInterface;
@@ -10,7 +11,7 @@ import calculator.Model.Interface.BinaryTreeInterface;
 
 /**
  *
- * @author tudv
+ * @author anhpv
  */
 public class LinkedBinaryTree<T> implements BinaryTreeInterface {
 

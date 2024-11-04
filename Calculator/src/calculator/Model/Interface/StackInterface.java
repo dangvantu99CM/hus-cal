@@ -7,7 +7,7 @@ package calculator.Model.Interface;
 
 /**
  *
- * @author tudv
+ * @author anhpv
  */
 public interface StackInterface<E> extends Iterable<E> {
     public void push(E element);

@@ -39,8 +39,9 @@ import javax.swing.table.TableCellRenderer;
 
 /**
  *
- * @author tudv
+ * @author anhpv
  */
+// Duoc su dung trong JFRAME (la 1 popup) 
 public class MainComponent extends JPanel {
 
     private final int SIZE_ROW = 5;
@@ -49,14 +50,15 @@ public class MainComponent extends JPanel {
     private JButton[][] buttonMatrix = new JButton[SIZE_ROW][SIZE_COL];
     private MenuData menuData = null;
 
-    public MainComponent(ActionMenu actionMenu) {
-        menuData = new MenuData(actionMenu);
+    public MainComponent(MenuData menuData) {
         if (menuData.initMenuItem().size() > 0) {
             initMainComponent(menuData.initMenuItem());;
         }
     }
 
     public void initMainComponent(ArrayList<MenuItem> listMenuItem) {
+        System.out.println("size ============== ");
+        System.out.println(listMenuItem.size());
         this.setLayout(new GridLayout(SIZE_ROW, SIZE_COL, 10, 10));
         this.setBackground(Color.white);
         this.setBorder(new EmptyBorder(10, 10, 10, 10));
@@ -71,7 +73,7 @@ public class MainComponent extends JPanel {
         if (listMenuItem == null || listMenuItem.size() <= 0) {
             return;
         }
-
+        // Loop matrix 
         for (int i = 0; i < SIZE_ROW; i++) {
             for (int j = 0; j < SIZE_COL; j++) {
                 MenuItem it = listMenuItem.get(count);
@@ -126,11 +128,11 @@ public class MainComponent extends JPanel {
                 buttonMatrix[i][j].setBackground(c);
                 Font newButtonFont = new Font(buttonMatrix[i][j].getFont().getName(), buttonMatrix[i][j].getFont().getStyle(), 15);
                 buttonMatrix[i][j].setFont(newButtonFont);
+                // listener event click
                 buttonMatrix[i][j].addActionListener(new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
                         if (it != null) {
-                            System.out.println("aaaaaaaaaa" + it.text);
                             it.action.onClick(it);
                         }
                     }

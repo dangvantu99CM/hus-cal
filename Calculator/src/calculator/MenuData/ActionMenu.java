@@ -7,8 +7,10 @@ package calculator.MenuData;
 
 /**
  *
- * @author tudv
+ * @author anhpv
  */
+
+// Noi tap hop cua cac actions
 public class ActionMenu {
 
     // number
@@ -86,4 +88,7 @@ public class ActionMenu {
     public ActionMenuItem click_multy_matrix_3113;
     public ActionMenuItem click_add_matrix_22;
     public ActionMenuItem click_add_matrix_33;
+    
+    // truu tuong
+    public ActionMenuItem click_any_button;
 }
