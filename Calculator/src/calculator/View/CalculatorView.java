@@ -25,7 +25,7 @@ import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.border.EmptyBorder;
-import net.miginfocom.swing.MigLayout;
+//import net.miginfocom.swing.MigLayout;
 
 /**
  *
@@ -50,7 +50,7 @@ public class CalculatorView extends JFrame {
     public boolean isClickedAddMatrix = false;
     public boolean isClickedMultyMatrix = false;
     public boolean isClickedEnter = false;
-    public boolean isClicked_GPT = false;
+    public boolean isClickedSolve = false;
     public boolean isClicked_matrix = false;
 
     private History history = new History();
@@ -140,7 +140,7 @@ public class CalculatorView extends JFrame {
     }
 
     public void _resetStatusButton() {
-        isClicked_GPT = false;
+        isClickedSolve = false;
         isClicked_matrix = false;
         isClickedAddMatrix = false;
         isClickedMultyMatrix = false;
@@ -158,7 +158,7 @@ public class CalculatorView extends JFrame {
     ActionMenuItem click_number_0 = new ActionMenuItem() {
         @Override
         public void onClick(MenuItem menuItem) {
-            if (isClicked_GPT || isClicked_matrix) {
+            if (isClickedSolve || isClicked_matrix) {
                 set_he_so(menuItem.text);
             } else {
                 expression_By_User += menuItem.text;
@@ -171,7 +171,7 @@ public class CalculatorView extends JFrame {
 
         @Override
         public void onClick(MenuItem menuItem) {
-            if (isClicked_GPT || isClicked_matrix) {
+            if (isClickedSolve || isClicked_matrix) {
                 set_he_so(menuItem.text);
             } else {
                 expression_By_User += menuItem.text;
@@ -184,7 +184,7 @@ public class CalculatorView extends JFrame {
 
         @Override
         public void onClick(MenuItem menuItem) {
-            if (isClicked_GPT || isClicked_matrix) {
+            if (isClickedSolve || isClicked_matrix) {
                 set_he_so(menuItem.text);
             } else {
                 expression_By_User += menuItem.text;
@@ -197,7 +197,7 @@ public class CalculatorView extends JFrame {
 
         @Override
         public void onClick(MenuItem menuItem) {
-            if (isClicked_GPT || isClicked_matrix) {
+            if (isClickedSolve || isClicked_matrix) {
                 set_he_so(menuItem.text);
             } else {
                 expression_By_User += menuItem.text;
@@ -210,7 +210,7 @@ public class CalculatorView extends JFrame {
 
         @Override
         public void onClick(MenuItem menuItem) {
-            if (isClicked_GPT || isClicked_matrix) {
+            if (isClickedSolve || isClicked_matrix) {
                 set_he_so(menuItem.text);
             } else {
                 expression_By_User += menuItem.text;
@@ -223,7 +223,7 @@ public class CalculatorView extends JFrame {
 
         @Override
         public void onClick(MenuItem menuItem) {
-            if (isClicked_GPT || isClicked_matrix) {
+            if (isClickedSolve || isClicked_matrix) {
                 set_he_so(menuItem.text);
             } else {
                 expression_By_User += menuItem.text;
@@ -236,7 +236,7 @@ public class CalculatorView extends JFrame {
 
         @Override
         public void onClick(MenuItem menuItem) {
-            if (isClicked_GPT || isClicked_matrix) {
+            if (isClickedSolve || isClicked_matrix) {
                 set_he_so(menuItem.text);
             } else {
                 expression_By_User += menuItem.text;
@@ -249,7 +249,7 @@ public class CalculatorView extends JFrame {
 
         @Override
         public void onClick(MenuItem menuItem) {
-            if (isClicked_GPT || isClicked_matrix) {
+            if (isClickedSolve || isClicked_matrix) {
                 set_he_so(menuItem.text);
             } else {
                 expression_By_User += menuItem.text;
@@ -262,7 +262,7 @@ public class CalculatorView extends JFrame {
 
         @Override
         public void onClick(MenuItem menuItem) {
-            if (isClicked_GPT || isClicked_matrix) {
+            if (isClickedSolve || isClicked_matrix) {
                 set_he_so(menuItem.text);
             } else {
                 expression_By_User += menuItem.text;
@@ -275,7 +275,7 @@ public class CalculatorView extends JFrame {
 
         @Override
         public void onClick(MenuItem menuItem) {
-            if (isClicked_GPT || isClicked_matrix) {
+            if (isClickedSolve || isClicked_matrix) {
                 set_he_so(menuItem.text);
             } else {
                 expression_By_User += menuItem.text;
@@ -288,7 +288,7 @@ public class CalculatorView extends JFrame {
 
         @Override
         public void onClick(MenuItem menuItem) {
-            if (isClicked_GPT || isClicked_matrix) {
+            if (isClickedSolve || isClicked_matrix) {
                 set_he_so(menuItem.text);
             } else {
                 expression_By_User += menuItem.text;
@@ -301,7 +301,7 @@ public class CalculatorView extends JFrame {
 
         @Override
         public void onClick(MenuItem menuItem) {
-            if (isClicked_GPT || isClicked_matrix) {
+            if (isClickedSolve || isClicked_matrix) {
                 set_he_so(menuItem.text);
             } else {
                 expression_By_User += menuItem.text;
@@ -314,7 +314,7 @@ public class CalculatorView extends JFrame {
 
         @Override
         public void onClick(MenuItem menuItem) {
-            if (isClicked_GPT || isClicked_matrix) {
+            if (isClickedSolve || isClicked_matrix) {
                 set_he_so(menuItem.text);
             } else {
                 expression_By_User += menuItem.text;
@@ -327,7 +327,7 @@ public class CalculatorView extends JFrame {
 
         @Override
         public void onClick(MenuItem menuItem) {
-            if (isClicked_GPT || isClicked_matrix) {
+            if (isClickedSolve || isClicked_matrix) {
                 set_he_so(menuItem.text);
             } else {
                 expression_By_User += menuItem.text;
@@ -340,7 +340,7 @@ public class CalculatorView extends JFrame {
 
         @Override
         public void onClick(MenuItem menuItem) {
-            if (isClicked_GPT || isClicked_matrix) {
+            if (isClickedSolve || isClicked_matrix) {
                 return;
             }
             if (expression_By_User == "" || expression_By_User == null) {
@@ -383,7 +383,7 @@ public class CalculatorView extends JFrame {
 
         @Override
         public void onClick(MenuItem menuItem) {
-            if (isClicked_GPT || isClicked_matrix) {
+            if (isClickedSolve || isClicked_matrix) {
                 set_he_so(menuItem.text);
             } else {
                 expression_By_User += menuItem.text;
@@ -396,7 +396,7 @@ public class CalculatorView extends JFrame {
 
         @Override
         public void onClick(MenuItem menuItem) {
-            if (isClicked_GPT || isClicked_matrix) {
+            if (isClickedSolve || isClicked_matrix) {
                 set_he_so(menuItem.text);
             } else {
                 expression_By_User += menuItem.text;
@@ -409,7 +409,7 @@ public class CalculatorView extends JFrame {
 
         @Override
         public void onClick(MenuItem menuItem) {
-            if (isClicked_GPT || isClicked_matrix) {
+            if (isClickedSolve || isClicked_matrix) {
                 set_he_so(menuItem.text);
             } else {
                 expression_By_User += menuItem.text;
@@ -422,7 +422,7 @@ public class CalculatorView extends JFrame {
 
         @Override
         public void onClick(MenuItem menuItem) {
-            if (isClicked_GPT || isClicked_matrix) {
+            if (isClickedSolve || isClicked_matrix) {
                 set_he_so(menuItem.text);
             } else {
                 expression_By_User += menuItem.text;
@@ -436,7 +436,7 @@ public class CalculatorView extends JFrame {
 
         @Override
         public void onClick(MenuItem menuItem) {
-            if (isClicked_GPT || isClicked_matrix) {
+            if (isClickedSolve || isClicked_matrix) {
                 set_he_so(pi);
             } else {
                 expression_By_User += pi;
@@ -449,7 +449,7 @@ public class CalculatorView extends JFrame {
 
         @Override
         public void onClick(MenuItem menuItem) {
-            if (isClicked_GPT || isClicked_matrix) {
+            if (isClickedSolve || isClicked_matrix) {
                 set_he_so("1/");
             } else {
                 expression_By_User += "1/";
@@ -463,7 +463,7 @@ public class CalculatorView extends JFrame {
         @Override
         public void onClick(MenuItem menuItem) {
             String e = String.valueOf(Math.E);
-            if (isClicked_GPT || isClicked_matrix) {
+            if (isClickedSolve || isClicked_matrix) {
                 set_he_so(e);
             } else {
                 expression_By_User += e;
@@ -477,7 +477,7 @@ public class CalculatorView extends JFrame {
         @Override
         public void onClick(MenuItem menuItem) {
             expression_By_User = calModel.getHistoryAnswer();
-            if (!isClicked_GPT && !isClicked_matrix) {
+            if (!isClickedSolve && !isClicked_matrix) {
                 scr.taxt.setText(expression_By_User);
                 while (!calModel.listResultQueue.isEmpty()) {
                     calModel.listResultQueue.dequeue();
@@ -493,7 +493,7 @@ public class CalculatorView extends JFrame {
         @Override
         public void onClick(MenuItem menuItem) {
             String giai_thua = "!";
-            if (isClicked_GPT || isClicked_matrix) {
+            if (isClickedSolve || isClicked_matrix) {
                 set_he_so(giai_thua);
             } else {
                 expression_By_User += giai_thua;
@@ -515,7 +515,7 @@ public class CalculatorView extends JFrame {
 
         @Override
         public void onClick(MenuItem menuItem) {
-            if (isClicked_GPT || isClicked_matrix) {
+            if (isClickedSolve || isClicked_matrix) {
                 set_he_so(menuItem.text + "(");
             } else {
                 expression_By_User += menuItem.text + "(";
@@ -528,7 +528,7 @@ public class CalculatorView extends JFrame {
 
         @Override
         public void onClick(MenuItem menuItem) {
-            if (isClicked_GPT || isClicked_matrix) {
+            if (isClickedSolve || isClicked_matrix) {
                 set_he_so(menuItem.text + "(");
             } else {
                 expression_By_User += menuItem.text + "(";
@@ -541,7 +541,7 @@ public class CalculatorView extends JFrame {
 
         @Override
         public void onClick(MenuItem menuItem) {
-            if (isClicked_GPT || isClicked_matrix) {
+            if (isClickedSolve || isClicked_matrix) {
                 set_he_so(menuItem.text + "(");
             } else {
                 expression_By_User += menuItem.text + "(";
@@ -554,7 +554,7 @@ public class CalculatorView extends JFrame {
 
         @Override
         public void onClick(MenuItem menuItem) {
-            if (isClicked_GPT || isClicked_matrix) {
+            if (isClickedSolve || isClicked_matrix) {
                 set_he_so(menuItem.text + "(");
             } else {
                 expression_By_User += menuItem.text + "(";
@@ -567,7 +567,7 @@ public class CalculatorView extends JFrame {
 
         @Override
         public void onClick(MenuItem menuItem) {
-            if (isClicked_GPT || isClicked_matrix) {
+            if (isClickedSolve || isClicked_matrix) {
                 set_he_so("e^");
             } else {
                 expression_By_User += "e^";
@@ -580,7 +580,7 @@ public class CalculatorView extends JFrame {
 
         @Override
         public void onClick(MenuItem menuItem) {
-            if (isClicked_GPT || isClicked_matrix) {
+            if (isClickedSolve || isClicked_matrix) {
                 set_he_so(menuItem.text + "(");
             } else {
                 expression_By_User += menuItem.text + "(";
@@ -593,7 +593,7 @@ public class CalculatorView extends JFrame {
 
         @Override
         public void onClick(MenuItem menuItem) {
-            if (isClicked_GPT || isClicked_matrix) {
+            if (isClickedSolve || isClicked_matrix) {
                 set_he_so(menuItem.text + "(");
             } else {
                 expression_By_User += menuItem.text + "(";
@@ -606,13 +606,10 @@ public class CalculatorView extends JFrame {
 
         @Override
         public void onClick(MenuItem menuItem) {
-            System.out.println("ppppppppppp ");
-//            if (isClicked_GPT || isClicked_matrix) {
-//                set_he_so(menuItem.text + "(");
-//            } else {
-//                expression_By_User += menuItem.text;
-//                scr.taxt.setText(expression_By_User);
-//            }
+            if (expression_By_User.length() > 0) {
+                expression_By_User = expression_By_User.substring(0, expression_By_User.length() - 1);
+                scr.taxt.setText(expression_By_User);
+            }
         }
     };
 
@@ -620,10 +617,10 @@ public class CalculatorView extends JFrame {
 
         @Override
         public void onClick(MenuItem menuItem) {
-            if (!isClicked_GPT && !isClicked_matrix) {
+            if (!isClickedSolve && !isClicked_matrix) {
                 return;
             } else {
-                if (isClicked_GPT) {
+                if (isClickedSolve) {
                     if (countEnter == 1) {
                         try {
                             String result = calModel.giai_pt_1(arr_he_so);
@@ -828,7 +825,7 @@ public class CalculatorView extends JFrame {
         resetScreen();
         countEnter = 0;
         isClicked_matrix = true;
-        isClicked_GPT = !isClicked_matrix;
+        isClickedSolve = !isClicked_matrix;
         ArrayList<String> tokens = cutToken(matrixSize);
         if (tokens.size() == 2) {
             A = new StringBuilder[Integer.parseInt(tokens.get(0))][Integer.parseInt(tokens.get(1))];
@@ -859,8 +856,8 @@ public class CalculatorView extends JFrame {
     public void setArrHeSo(int degree) {
         resetScreen();
         countEnter = 0;
-        isClicked_GPT = true;
-        isClicked_matrix = !isClicked_GPT;
+        isClickedSolve = true;
+        isClicked_matrix = !isClickedSolve;
         arr_he_so = new StringBuilder[degree];
         for (int i = 0; i < arr_he_so.length; i++) {
             arr_he_so[i] = new StringBuilder("");
@@ -891,7 +888,7 @@ public class CalculatorView extends JFrame {
         @Override
         public void onClick(MenuItem menuItem) {
             isClickedEnter = true;
-            if (isClicked_GPT) {
+            if (isClickedSolve) {
                 if (arr_he_so.length > 0 && countEnter == arr_he_so.length - 1) {
                     return;
                 }
@@ -1157,7 +1154,7 @@ public class CalculatorView extends JFrame {
     };
 
     public void set_he_so(String text) {
-        if (isClicked_GPT) {
+        if (isClickedSolve) {
             if (countEnter == 0) {
                 if (arr_he_so[0] != null) {
                     arr_he_so[0].append(text);

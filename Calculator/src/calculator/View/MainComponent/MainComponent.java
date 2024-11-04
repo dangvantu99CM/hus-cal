@@ -35,7 +35,7 @@ import javax.swing.JTextField;
 import javax.swing.UIManager;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.TableCellRenderer;
-import net.miginfocom.swing.MigLayout;
+//import net.miginfocom.swing.MigLayout;
 
 /**
  *
@@ -76,43 +76,43 @@ public class MainComponent extends JPanel {
             for (int j = 0; j < SIZE_COL; j++) {
                 MenuItem it = listMenuItem.get(count);
                 if (it.text.equalsIgnoreCase("SQRT")) {
-                    ImageIcon sqrt_icon = new ImageIcon("C:\\Users\\Henry\\Documents\\NetBeansProjects\\Calculator\\src\\calculator\\Resource\\Image\\sqrt_1.png");
+                    ImageIcon sqrt_icon = new ImageIcon(getClass().getResource("..\\..\\Resource\\Image\\sqrt_1.png"));
                     Image image = sqrt_icon.getImage(); // transform it 
                     Image newimg = image.getScaledInstance(30, 30, java.awt.Image.SCALE_SMOOTH); // scale it the smooth way  
                     sqrt_icon = new ImageIcon(newimg);  // transform it back
                     buttonMatrix[i][j] = new JButton(sqrt_icon);
                 } else if (it.text.equalsIgnoreCase("pi")) {
-                    ImageIcon pi_icon = new ImageIcon("C:\\Users\\Henry\\Documents\\NetBeansProjects\\Calculator\\src\\calculator\\Resource\\Image\\pi_1_1.png");
+                    ImageIcon pi_icon = new ImageIcon(getClass().getResource("..\\..\\Resource\\Image\\pi_1_1.png"));
                     Image image = pi_icon.getImage(); // transform it 
                     Image newimg = image.getScaledInstance(30, 30, java.awt.Image.SCALE_SMOOTH); // scale it the smooth way  
                     pi_icon = new ImageIcon(newimg);  // transform it back
                     buttonMatrix[i][j] = new JButton(pi_icon);
                 } else if (it.text.equalsIgnoreCase("x^y")) {
-                    ImageIcon x_deg_y_icon = new ImageIcon("C:\\Users\\Henry\\Documents\\NetBeansProjects\\Calculator\\src\\calculator\\Resource\\Image\\x^y.png");
+                    ImageIcon x_deg_y_icon = new ImageIcon(getClass().getResource("..\\..\\Resource\\Image\\x^y.png"));
                     Image image = x_deg_y_icon.getImage(); // transform it 
                     Image newimg = image.getScaledInstance(30, 30, java.awt.Image.SCALE_SMOOTH); // scale it the smooth way  
                     x_deg_y_icon = new ImageIcon(newimg);  // transform it back
                     buttonMatrix[i][j] = new JButton(x_deg_y_icon);
                 } else if (it.text.equalsIgnoreCase("+")) {
-                    ImageIcon x_deg_y_icon = new ImageIcon("C:\\Users\\Henry\\Documents\\NetBeansProjects\\Calculator\\src\\calculator\\Resource\\Image\\add_2.png");
+                    ImageIcon x_deg_y_icon = new ImageIcon(getClass().getResource("..\\..\\Resource\\Image\\add_2.png"));
                     Image image = x_deg_y_icon.getImage(); // transform it 
                     Image newimg = image.getScaledInstance(30, 30, java.awt.Image.SCALE_SMOOTH); // scale it the smooth way  
                     x_deg_y_icon = new ImageIcon(newimg);  // transform it back
                     buttonMatrix[i][j] = new JButton(x_deg_y_icon);
                 } else if (it.text.equalsIgnoreCase("-")) {
-                    ImageIcon x_deg_y_icon = new ImageIcon("C:\\Users\\Henry\\Documents\\NetBeansProjects\\Calculator\\src\\calculator\\Resource\\Image\\subtract_1.png");
+                    ImageIcon x_deg_y_icon = new ImageIcon(getClass().getResource("..\\..\\Resource\\Image\\subtract_1.png"));
                     Image image = x_deg_y_icon.getImage(); // transform it 
                     Image newimg = image.getScaledInstance(30, 30, java.awt.Image.SCALE_SMOOTH); // scale it the smooth way  
                     x_deg_y_icon = new ImageIcon(newimg);  // transform it back
                     buttonMatrix[i][j] = new JButton(x_deg_y_icon);
                 } else if (it.text.equalsIgnoreCase("*")) {
-                    ImageIcon x_deg_y_icon = new ImageIcon("C:\\Users\\Henry\\Documents\\NetBeansProjects\\Calculator\\src\\calculator\\Resource\\Image\\mul.png");
+                    ImageIcon x_deg_y_icon = new ImageIcon(getClass().getResource("..\\..\\Resource\\Image\\mul.png"));
                     Image image = x_deg_y_icon.getImage(); // transform it 
                     Image newimg = image.getScaledInstance(30, 30, java.awt.Image.SCALE_SMOOTH); // scale it the smooth way  
                     x_deg_y_icon = new ImageIcon(newimg);  // transform it back
                     buttonMatrix[i][j] = new JButton(x_deg_y_icon);
                 } else if (it.text.equalsIgnoreCase("/")) {
-                    ImageIcon x_deg_y_icon = new ImageIcon("C:\\Users\\Henry\\Documents\\NetBeansProjects\\Calculator\\src\\calculator\\Resource\\Image\\divide.png");
+                    ImageIcon x_deg_y_icon = new ImageIcon(getClass().getResource("..\\..\\Resource\\Image\\divide.png"));
                     Image image = x_deg_y_icon.getImage(); // transform it 
                     Image newimg = image.getScaledInstance(30, 30, java.awt.Image.SCALE_SMOOTH); // scale it the smooth way  
                     x_deg_y_icon = new ImageIcon(newimg);  // transform it back
